@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+    <Project Path="Sanbox/Sanbox.vcxproj" Id="421bbce2-5b58-4613-bb7f-a959cbae7b5d" />
+  <Project Path="BAD/BAD.vcxproj" Id="f88de46a-a209-4559-9a02-9eb2fe9c3c21" />
+</Solution>
