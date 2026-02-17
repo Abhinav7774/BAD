@@ -1,7 +1,0 @@
-﻿  test.cpp
-     Creating library D:\Dev\BAD\bin\Release-x64\BAD\BAD.lib and object D:\Dev\BAD\bin\Release-x64\BAD\BAD.exp
-  Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-  Finished generating code
-  BAD.vcxproj -> D:\Dev\BAD\bin\Release-x64\BAD\BAD.dll
