@@ -1,0 +1,3 @@
+﻿  Application.cpp
+D:\Dev\BAD\Sanbox\src\Application.cpp(5,6): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Sanbox.vcxproj -> D:\Dev\BAD\bin\Debug-x64\Sanbox\Sanbox.exe
