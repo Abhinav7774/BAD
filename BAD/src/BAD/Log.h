@@ -22,9 +22,9 @@ namespace BAD{
 #define BAD_CORE_WARN(...) ::BAD::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define BAD_CORE_ERROR(...) ::BAD::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define BAD_CORE_CRITICAL(...) ::BAD::Log::GetCoreLogger()->critical(__VA_ARGS__)
-#define BAD_CORE_DEBUG(...) ::BAD::Log::GetCoreLogger()->debug(__VA_ARGS__)
+#define BAD_CORE_DBUG(...) ::BAD::Log::GetCoreLogger()->debug(__VA_ARGS__)
 
 #define BAD_WARN(...) ::BAD::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define BAD_ERROR(...) ::BAD::Log::GetClientLogger()->error(__VA_ARGS__)
 #define BAD_CRITICAL(...) ::BAD::Log::GetClientLogger()->critical(__VA_ARGS__)
-#define BAD_DEBUG(...) ::BAD::Log::GetClientLogger()->debug(__VA_ARGS__)
+#define BAD_DBUG(...) ::BAD::Log::GetClientLogger()->debug(__VA_ARGS__)

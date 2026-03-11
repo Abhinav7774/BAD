@@ -3,6 +3,8 @@ workspace "BAD"
 	architecture "x64"
 	startproject "Sandbox"
 
+
+
 	configurations
 	{
 		"Debug",
@@ -11,6 +13,8 @@ workspace "BAD"
 	}
 
 outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+filter "system:windows"
+        buildoptions { "/utf-8" }
 
 project "BAD"
 
@@ -18,8 +22,8 @@ project "BAD"
 	kind "SharedLib"
 	language "C++"
 
-	targetdir = "bin/" .. outdir .. "/%{prj.name}"
-	objdir = "bin-int/" .. outdir .. "/%{prj.name}"
+	targetdir("bin/" .. outdir .."/%{prj.name}")
+	objdir("bin-int/".. outdir .."/%{prj.name}")
 
 	files
 	{
@@ -45,7 +49,7 @@ project "BAD"
 
 		postbuildcommands
 		{
-			("{COPY} {cfg.buildtarget.relpath} ../bin/" .. outdir .. "/Sandbox")
+			("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
@@ -67,8 +71,8 @@ project "Sandbox"
 
 	language "C++"
 
-	targetdir = "bin/" .. outdir .. "/%{prj.name}"
-	objdir = "bin-int/" .. outdir .. "/%{prj.name}"
+	targetdir("bin/" .. outdir .."/%{prj.name}")
+	objdir("bin-int/".. outdir .."/%{prj.name}")
 
 	files
 	{
@@ -78,6 +82,7 @@ project "Sandbox"
 
 	includedirs
 	{
+		"BAD/vendor/spdlog/include",
 		"BAD/src"
 	}
 
