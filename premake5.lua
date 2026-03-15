@@ -33,6 +33,7 @@ project "BAD"
 
 	includedirs
 	{
+		"BAD/src",
 		"%{prj.name}/vendor/spdlog/include"
 	}
 

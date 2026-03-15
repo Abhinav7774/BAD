@@ -4,6 +4,9 @@
     <Filter Include="BAD">
       <UniqueIdentifier>{4CD4870B-B8DD-877C-4159-9E7CAD61937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BAD\Event">
+      <UniqueIdentifier>{9D5E26DC-09C9-DA52-5207-8CF8BEB0B8A7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BAD.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\BAD\EntryPoint.h">
       <Filter>BAD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BAD\Event\ApplicationEvent.h">
+      <Filter>BAD\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BAD\Event\Event.h">
+      <Filter>BAD\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BAD\Event\KeyEvent.h">
+      <Filter>BAD\Event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BAD\Event\MouseEvent.h">
+      <Filter>BAD\Event</Filter>
     </ClInclude>
     <ClInclude Include="src\BAD\Log.h">
       <Filter>BAD</Filter>
