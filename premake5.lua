@@ -12,9 +12,15 @@ workspace "BAD"
 		"Dist"
 	}
 
-outdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+IncludeDir = {}
+IncludeDir["GLFW"] = "BAD/vendor/GLFW/include"
+
 filter "system:windows"
         buildoptions { "/utf-8" }
+
+include "BAD/vendor/GLFW"
 
 project "BAD"
 
@@ -22,8 +28,8 @@ project "BAD"
 	kind "SharedLib"
 	language "C++"
 
-	targetdir("bin/" .. outdir .."/%{prj.name}")
-	objdir("bin-int/".. outdir .."/%{prj.name}")
+	targetdir("bin/" .. outputdir .."/%{prj.name}")
+	objdir("bin-int/".. outputdir .."/%{prj.name}")
 
 	pchheader "badpch.h"
 	pchsource "BAD/src/badpch.cpp"
@@ -36,7 +42,14 @@ project "BAD"
 	includedirs
 	{
 		"BAD/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+	
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
@@ -52,7 +65,7 @@ project "BAD"
 
 		postbuildcommands
 		{
-			("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outdir .. "/Sandbox")
+			("{COPYFILE} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
@@ -74,8 +87,8 @@ project "Sandbox"
 
 	language "C++"
 
-	targetdir("bin/" .. outdir .."/%{prj.name}")
-	objdir("bin-int/".. outdir .."/%{prj.name}")
+	targetdir("bin/" .. outputdir .."/%{prj.name}")
+	objdir("bin-int/".. outputdir .."/%{prj.name}")
 
 	files
 	{

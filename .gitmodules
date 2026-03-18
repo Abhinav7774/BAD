@@ -1,3 +1,12 @@
 [submodule "BAD/vendor/spdlog"]
 	path = BAD/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "src/vendor/GLFW"]
+	path = src/vendor/GLFW
+	url = https://github.com/DarkFlame774/glfw.git
+[submodule "BAD/src/vendor/GLFW"]
+	path = BAD/src/vendor/GLFW
+	url = https://github.com/DarkFlame774/glfw.git
+[submodule "BAD/vendor/GLFW"]
+	path = BAD/vendor/GLFW
+	url = https://github.com/DarkFlame774/glfw.git
