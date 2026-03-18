@@ -8,9 +8,8 @@ class BAD_API KeyEvent : public Event {
 		inline int GetKeyCode() const {
 			return m_keyCode;
 		}
-		int GetCategoryFlag() {
-			return EventCategoryInput | EventCategoryKeyboard;
-		}
+		
+		EVENT_CLASS_CATEGORY(EventCategoryInput | EventCategoryKeyboard);
 
 	protected:
 		KeyEvent(int p_keyCode) {
@@ -22,8 +21,9 @@ class BAD_API KeyEvent : public Event {
 class BAD_API KeyPressedEvent : public KeyEvent {
 	public:
 		KeyPressedEvent(int p_keyCode) : KeyEvent(p_keyCode) {};
-		EventType GetEventType() const { return EventType::KeyPressed; }
-		const std::string GetEventName() const { return "KeyPressed"; }
+		
+		EVENT_CLASS_TYPE(KeyPressed);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "KeyPressed" << " : " << m_keyCode;
@@ -34,8 +34,9 @@ class BAD_API KeyPressedEvent : public KeyEvent {
 class BAD_API KeyHoldEvent : public KeyEvent {
 	public:
 		KeyHoldEvent(int p_keyCode,bool p_repeat) : KeyEvent(p_keyCode) {};
-		EventType GetEventType() const { return EventType::KeyHold; }
-		const std::string GetEventName() const { return "KeyHold"; }
+		
+		EVENT_CLASS_TYPE(KeyHold);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "KeyHold" << " : " << m_keyCode;
@@ -46,8 +47,9 @@ class BAD_API KeyHoldEvent : public KeyEvent {
 class BAD_API KeyReleasedEvent : public KeyEvent {
 	public:
 		KeyReleasedEvent(int p_keyCode) : KeyEvent(p_keyCode) {};
-		EventType GetEventType() const { return EventType::KeyReleased; }
-		const std::string GetEventName() const { return "KeyReleased"; }
+		
+		EVENT_CLASS_TYPE(KeyReleased);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "KeyReleased" << " : " << m_keyCode;

@@ -13,9 +13,9 @@ class BAD_API WindowResizeEvent : public Event {
 		  inline uint64_t GetHeight() const { return m_height; }
 		  inline uint64_t GetWidth() const { return m_width; }
 
-		  EventType GetEventType() const { return EventType::WindowResize; }
-		  int GetCategoryFlag() const { return EventCategoryApplication; }
-		  const std::string GetEventName() const { return "WindowResize"; }
+		  EVENT_CLASS_TYPE(WindowResize);
+		  EVENT_CLASS_CATEGORY(EventCategoryApplication);
+
 		  std::string toString() const override {
 				std::stringstream ss;
 				ss << "WindowResize" << " : " << "(H: " << m_height << ", W: " << m_width << ")";
@@ -36,9 +36,9 @@ class BAD_API WindowMoveEvent : public Event {
 		  inline uint64_t GetX() const { return m_coordX; }
 		  inline uint64_t GetY() const { return m_coordY; }
 
-		  EventType GetEventType() const { return EventType::WindowMoved; }
-		  int GetCategoryFlag() const { return EventCategoryApplication; }
-		  const std::string GetEventName() const { return "WindowMoved"; }
+		  EVENT_CLASS_TYPE(WindowMoved);
+		  EVENT_CLASS_CATEGORY(EventCategoryApplication);
+
 		  std::string toString() const override {
 				std::stringstream ss;
 				ss << "WindowMoved" << " : " << "(" << m_coordX << ", " << m_coordY<< ")";

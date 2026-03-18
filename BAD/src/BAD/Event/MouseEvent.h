@@ -14,9 +14,9 @@ class BAD_API MouseMovedEvent : public Event {
 		inline uint64_t GetX() const { return m_coordX; }
 		inline uint64_t GetY() const { return m_coordY; }
 
-		EventType GetEventType() const { return EventType::MouseMoved; }
-		int GetCategoryFlag() const { return EventCategoryMouse; }
-		const std::string GetEventName() const { return "MouseMoved"; }
+		EVENT_CLASS_TYPE(MouseMoved);
+		EVENT_CLASS_CATEGORY(EventCategoryMouse);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "MouseMoved" << " : (" << m_coordX << "," << m_coordY << ")";
@@ -36,9 +36,9 @@ class BAD_API MouseScrolledEvent : public Event {
 		inline uint64_t GetX() const { return m_offsetX; }
 		inline uint64_t GetY() const { return m_offsetY; }
 
-		EventType GetEventType() const { return EventType::MouseScrolled; }
-		int GetCategoryFlag() const { return EventCategoryMouse; }
-		const std::string GetEventName() const { return "MouseScrolled"; }
+		EVENT_CLASS_TYPE(MouseScrolled);
+		EVENT_CLASS_CATEGORY(EventCategoryMouse);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "MouseScrolled" << " : (" << m_offsetX << "," << m_offsetY << ")";
@@ -56,7 +56,8 @@ class BAD_API MouseButtonEvent : public Event {
 		inline int GetMouseButton() const {
 			return m_mouseButton;
 		}
-		int GetCategoryFlag() const { return EventCategoryInput | EventCategoryMouse; }
+
+		EVENT_CLASS_CATEGORY(EventCategoryInput | EventCategoryMouse);
 
 	protected:
 		MouseButtonEvent(int p_mouseButton)
@@ -70,8 +71,8 @@ class BAD_API MouseButtonPressedEvent : public MouseButtonEvent {
 		MouseButtonPressedEvent(int p_mouseButton) 
 		: MouseButtonEvent(p_mouseButton) {}
 
-		EventType GetEventType() const { return EventType::MouseButtonPressed; }
-		const std::string GetEventName() const { return "MouseButtonPressed"; }
+		EVENT_CLASS_TYPE(MouseButtonPressed);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "MouseButtonPressed" << " : " << m_mouseButton;
@@ -84,8 +85,8 @@ class BAD_API MouseButtonReleasedEvent : public MouseButtonEvent {
 		MouseButtonReleasedEvent(int p_mouseButton) 
 		: MouseButtonEvent(p_mouseButton) {}
 
-		EventType GetEventType() const { return EventType::MouseButtonReleased; }
-		const std::string GetEventName() const { return "MouseButtonReleased"; }
+		EVENT_CLASS_TYPE(MouseButtonReleased);
+
 		std::string toString() const override {
 			std::stringstream ss;
 			ss << "MouseButtonReleased" << " : " << m_mouseButton;

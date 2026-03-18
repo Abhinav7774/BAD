@@ -13,7 +13,14 @@ namespace BAD {
 
 	void Application::Run() {
 			WindowResizeEvent e(1920,1080);
-			BAD_TRACE("{}",e);
+			if (e.isInCategoryFlags(EventCategoryKeyboard)) {
+				BAD_TRACE(e);
+			}
+			if (e.isInCategoryFlags(EventCategoryApplication)) {
+				BAD_TRACE("Correct");
+				BAD_TRACE(e);
+			}
+
 			while(true);
 	}
 
