@@ -25,6 +25,8 @@ project "BAD"
 	targetdir("bin/" .. outdir .."/%{prj.name}")
 	objdir("bin-int/".. outdir .."/%{prj.name}")
 
+	pchheader "badpch.h"
+	pchsource "BAD/src/badpch.cpp"
 	files
 	{
 		"%{prj.name}/src/**.h",

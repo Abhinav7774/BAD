@@ -1,3 +1,4 @@
+#include "badpch.h"
 #include "Log.h"
 
 namespace BAD {

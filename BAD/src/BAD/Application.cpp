@@ -1,7 +1,7 @@
+#include "badpch.h"
 #include "BAD/Event/ApplicationEvent.h"
 #include "Application.h"
 #include "Log.h"
-#include <iostream>
 
 namespace BAD {
 	Application::Application() {
