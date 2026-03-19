@@ -1,5 +1,4 @@
 #include "badpch.h"
-#include "Log.h"
 
 namespace BAD {
 	std::shared_ptr<spdlog::logger> Log::m_coreLogger;

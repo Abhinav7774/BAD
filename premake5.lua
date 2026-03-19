@@ -33,6 +33,7 @@ project "BAD"
 
 	pchheader "badpch.h"
 	pchsource "BAD/src/badpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -51,6 +52,8 @@ project "BAD"
 		"GLFW",
 		"opengl32.lib"
 	}
+
+	dependson { "GLFW" }
 
 	filter "system:windows"
 		cppdialect "C++17"

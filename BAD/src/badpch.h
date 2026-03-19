@@ -13,6 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "BAD/Log.h"
 
 #ifdef BAD_PLATFORM_WINDOWS
 	#include <Windows.h>

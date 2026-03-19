@@ -7,6 +7,12 @@
     <Filter Include="BAD\Event">
       <UniqueIdentifier>{9D5E26DC-09C9-DA52-5207-8CF8BEB0B8A7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="PLatform">
+      <UniqueIdentifier>{0A2F4115-F6FB-9B20-1F15-8AC80B41D1AE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PLatform\Winodws">
+      <UniqueIdentifier>{A41CF0B1-9015-0F04-B947-F488A59FEE0F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BAD.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\BAD\Log.h">
       <Filter>BAD</Filter>
     </ClInclude>
+    <ClInclude Include="src\BAD\Window.h">
+      <Filter>BAD</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PLatform\Winodws\WindowsWindow.h">
+      <Filter>PLatform\Winodws</Filter>
+    </ClInclude>
     <ClInclude Include="src\badpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -42,6 +54,9 @@
     </ClCompile>
     <ClCompile Include="src\BAD\Log.cpp">
       <Filter>BAD</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PLatform\Winodws\WinodwsWindow.cpp">
+      <Filter>PLatform\Winodws</Filter>
     </ClCompile>
     <ClCompile Include="src\badpch.cpp" />
   </ItemGroup>

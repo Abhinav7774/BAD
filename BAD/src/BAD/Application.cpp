@@ -1,27 +1,22 @@
 #include "badpch.h"
 #include "BAD/Event/ApplicationEvent.h"
 #include "Application.h"
-#include "Log.h"
 
 namespace BAD {
 	Application::Application() {
-
+		m_window = (std::unique_ptr<Window>)Window::Create();
 	}
 	Application::~Application() {
 
 	}
 
 	void Application::Run() {
-			WindowResizeEvent e(1920,1080);
-			if (e.isInCategoryFlags(EventCategoryKeyboard)) {
-				BAD_TRACE(e);
-			}
-			if (e.isInCategoryFlags(EventCategoryApplication)) {
-				BAD_TRACE("Correct");
-				BAD_TRACE(e);
-			}
 
-			while(true);
+		while (m_running) {
+			m_window->OnUpdate();
+		}
+			
+
 	}
 
 }

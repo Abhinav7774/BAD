@@ -170,11 +170,14 @@
     <ClInclude Include="src\BAD\Event\KeyEvent.h" />
     <ClInclude Include="src\BAD\Event\MouseEvent.h" />
     <ClInclude Include="src\BAD\Log.h" />
+    <ClInclude Include="src\BAD\Window.h" />
+    <ClInclude Include="src\PLatform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\badpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\BAD\Application.cpp" />
     <ClCompile Include="src\BAD\Log.cpp" />
+    <ClCompile Include="src\PLatform\Windows\WinodwsWindow.cpp" />
     <ClCompile Include="src\badpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
