@@ -54,7 +54,7 @@ class BAD_API EventDispatcher {
 		: m_event(event) {};
 
 		template<class T>
-		bool Dispatch(EventFun<T> finc) {
+		bool Dispatch(EventFun<T> func) {
 			if (m_event.GetEventType() == T::GetStaticType()) {
 				m_event.m_handled = func(*(T*)&m_event);
 				return true;

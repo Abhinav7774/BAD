@@ -1,13 +1,17 @@
 #pragma once
 #include "BAD/Window.h"
+#include "../../../vendor/Glad/include/glad/glad.h"
 #include "../../../vendor/GLFW/include/GLFW/glfw3.h"
 
+struct GLFWwindow;
+
 namespace BAD {
+
 	class WindowsWindow : public Window {
 		public:
 			WindowsWindow(const WindowProps& props);
 			virtual ~WindowsWindow();
-
+			GLFWwindow* GetGLFWwindow() const { return m_window; }
 
 			virtual void OnUpdate() const override;
 

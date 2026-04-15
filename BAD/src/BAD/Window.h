@@ -11,6 +11,7 @@ namespace BAD {
 		unsigned int m_height;
 		unsigned int m_width;
 
+
 		WindowProps(const std::string& p_title = "BAD",
 					 unsigned int p_height = 720,
 					 unsigned int p_width = 1280)

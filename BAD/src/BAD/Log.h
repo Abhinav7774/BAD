@@ -30,12 +30,14 @@ struct fmt::formatter<T, std::enable_if_t<std::is_base_of<BAD::Event, T>::value,
 	}
 };
 
+#define BAD_CORE_INFO(...) ::BAD::Log::GetCoreLogger()->info(__VA_ARGS__)
 #define BAD_CORE_WARN(...) ::BAD::Log::GetCoreLogger()->warn(__VA_ARGS__)
 #define BAD_CORE_ERROR(...) ::BAD::Log::GetCoreLogger()->error(__VA_ARGS__)
 #define BAD_CORE_CRITICAL(...) ::BAD::Log::GetCoreLogger()->critical(__VA_ARGS__)
 #define BAD_CORE_DBUG(...) ::BAD::Log::GetCoreLogger()->debug(__VA_ARGS__)
 #define BAD_CORE_TRACE(...) ::BAD::Log::GetCoreLogger()->trace(__VA_ARGS__)
 
+#define BAD_INFO(...) ::BAD::Log::GetClientLogger()->info(__VA_ARGS__)
 #define BAD_WARN(...) ::BAD::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define BAD_ERROR(...) ::BAD::Log::GetClientLogger()->error(__VA_ARGS__)
 #define BAD_CRITICAL(...) ::BAD::Log::GetClientLogger()->critical(__VA_ARGS__)

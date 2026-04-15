@@ -21,6 +21,7 @@ filter "system:windows"
         buildoptions { "/utf-8" }
 
 include "BAD/vendor/GLFW"
+include "BAD/vendor/Glad"
 
 project "BAD"
 
@@ -44,12 +45,15 @@ project "BAD"
 	{
 		"BAD/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{prj.name}/vendor/Glad/include",
+		"%{prj.name}/vendor/GLFW/include"
+
 	}
 	
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -117,6 +121,7 @@ project "Sandbox"
 
 		links
 		{
+			"Glad",
 			"BAD"
 		}
 
